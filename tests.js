@@ -6,16 +6,20 @@
 
 var pget = require('./pget');
 
-exports.testSegmented = function (test) {
-  test.expect(1);
+module.exports = {
+  testSegmented:function (test) {
+    test.expect(1);
 
-  pget.pget('10.211.55.5', 21, 'ftptest', 'ftptest', '/133k.file', '/tmp/133k.file', 5, function (e) {
-    if (e) {
-      console.error("Could not download file using pget.  %s", e.message);
-      throw e;
-    }
+    pget.pget('10.211.55.5', 21, 'ftptest', 'ftptest', '/137m.file', '/tmp/137m.file', 5, function (e) {
+      if (e) {
+        console.error("Could not download file using pget.  %s", e.message);
+        throw e;
+      }
 
-    test.ok(true, "Download completed.");
-    test.done();
-  });
-};
+      console.log("Downloaded file successfully.");
+
+      test.ok(true, "Download completed.");
+      test.done();
+    });
+  }
+}

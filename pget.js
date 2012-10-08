@@ -15,7 +15,7 @@
  * along with pget.  If not, see <http://www.gnu.org/licenses/>.
  */
 var ftp = require('ftp'), EventEmitter = require('events').EventEmitter, fs = require('fs');
-var Logger = require('devnull'), logger = new Logger({level:3});
+var Logger = require('devnull'), logger = new Logger({level:5});
 
 module.exports.pget = function (ftp_server, ftp_port, username, password, path, local_path, segments, cb, debug) {
   var emitter = new EventEmitter();
@@ -183,7 +183,7 @@ module.exports.pget = function (ftp_server, ftp_port, username, password, path, 
 
       stream.on('data', function (buffer) {
         if (completed) {
-          logger.debug("Chunk data download completed, ignoring.");
+          // logger.debug("Chunk data download completed, ignoring.");
           return;
         }
 
