@@ -1,0 +1,30 @@
+{ "name":"pget",
+  "version":"0.0.1",
+  "author":"Michael Laccetti <michael@laccetti.com>",
+  "description":"An FTP client that supports segmented (parallel) downloads.",
+  "main":"./pget",
+  "engines":{
+    "node":">=0.8.0"
+  },
+  "keywords":[ "ftp", "client", "transfer", "segmented", "parallel" ],
+  "licenses":[
+    {
+      "type":"GPLv3",
+      "url":"http://github.com/mlaccetti/pget/raw/master/LICENSE"
+    }
+  ],
+  "repository":{
+    "type":"git",
+    "url":"http://github.com/mlaccetti/pget.git"
+  },
+  "dependencies":{
+    "ftp":">=0.1.8",
+    "devnull":"0.0.9"
+  },
+  "devDependencies":{
+    "nodeunit":"0.7.4"
+  },
+  "scripts":{
+    "test":"./run_tests.sh"
+  }
+}
